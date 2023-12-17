@@ -8,14 +8,25 @@ import time
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
+title = " _   _                  ___  ___            \n| | | |                 |  \/  |            \n| |_| | __ _ _ __   __ _| .  . | __ _ _ __  \n|  _  |/ _` | '_ \ / _` | |\/| |/ _` | '_ \ \n| | | | (_| | | | | (_| | |  | | (_| | | | |\n\_| |_/\__,_|_| |_|\__, \_|  |_/\__,_|_| |_|\n                    __/ |                   \n                   |___/                    \n				   "
+
 #Global variables
 filename = "wordlist.txt"
+
 #This will be a global function to clear the screen
 def clear_screen():
     try:
         _ = os.system("cls")
     except:
         _ = os.system("clear")
+
+#This will create the game screen image
+def make_title():
+    print(title)
+    #title_image = open("hangman_title.txt", "r")
+    #lines = title_image.readlines()
+    #for line in lines:
+    #    print(line)
 
 #This will be the default pause
 def pause():
@@ -24,9 +35,7 @@ def pause():
 #This creates the start menu
 def menu():
     clear_screen()
-    title_image = open("hangman_title.txt", "r")
-    for line in title_image.readlines():
-        print(line)
+    make_title()
     print("1) Play Hangman")
     print("2) Quit")
     play = input("Select an option to continue: ")
@@ -63,9 +72,6 @@ def play_game():
             misses=misses+1
             missed_guesses = missed_guesses + user_guess
         if hidden_word == word:
-            title_image = open("hangman_title.txt", "r")
-            for line in title_image.readlines():
-                print(line)
             misses = 7
             clear_screen()
             print("YOU HAVE WON!!! GREAT JOB!\r\n")
