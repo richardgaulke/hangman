@@ -12,7 +12,10 @@ from tkinter.filedialog import askopenfilename
 filename = "wordlist.txt"
 #This will be a global function to clear the screen
 def clear_screen():
-    _ = os.system("clear")
+    try:
+        _ = os.system("cls")
+    except:
+        _ = os.system("clear")
 
 #This will be the default pause
 def pause():
