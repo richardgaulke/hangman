@@ -23,10 +23,6 @@ def clear_screen():
 #This will create the game screen image
 def make_title():
     print(title)
-    #title_image = open("hangman_title.txt", "r")
-    #lines = title_image.readlines()
-    #for line in lines:
-    #    print(line)
 
 #This will be the default pause
 def pause():
