@@ -1,7 +1,12 @@
 # Hangman
-hangman game created using python
+Hangman game created using Python + Flask.
 
-To play, clone the repository and run:
-  python3 ./hangman.py
+## Run locally
+```bash
+python3 -m pip install flask
+python3 ./hangman.py
+```
 
-Feel free to edit the code and make the game your own. 
+Open http://localhost:5000 in your browser to play.
+
+Feel free to edit the code and make the game your own.

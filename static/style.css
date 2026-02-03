@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.title {
+  text-align: center;
+}
+
+.title pre {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #111827;
+  white-space: pre-wrap;
+}
+
+.title h1 {
+  margin: 16px 0 0;
+  font-size: 32px;
+}
+
+.flash {
+  margin: 20px auto;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #e0f2fe;
+  color: #075985;
+  text-align: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+.art pre {
+  background: #111827;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap;
+  min-height: 240px;
+}
+
+.status {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.word {
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.misses {
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+.message {
+  margin: 0;
+  color: #334155;
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+}
+
+.guess-form {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #64748b;
+}
+
+button:disabled,
+input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .title pre {
+    font-size: 10px;
+  }
+
+  .word {
+    font-size: 24px;
+  }
+}
