@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <header class="title">
+      <pre>{{ title_art }}</pre>
+      <h1>Hangman</h1>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="game">
+      <section class="art">
+        <pre>{{ miss_art }}</pre>
+      </section>
+
+      <section class="status">
+        <p class="word">{{ hidden_word | join(' ') }}</p>
+        <p class="misses">Incorrect Guesses: <span>{{ missed_guesses | join(' ') }}</span></p>
+        <p class="message">{{ status_message }}</p>
+      </section>
+
+      <section class="controls">
+        <form action="{{ url_for('guess') }}" method="post" class="guess-form">
+          <label for="guess">Guess a letter</label>
+          <input id="guess" name="guess" maxlength="1" autocomplete="off" {% if game_over %}disabled{% endif %} />
+          <button type="submit" {% if game_over %}disabled{% endif %}>Guess</button>
+        </form>
+
+        <form action="{{ url_for('reset_game') }}" method="post">
+          <button type="submit" class="secondary">New Game</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
